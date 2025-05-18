@@ -1,0 +1,144 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f8f9fa;
+}
+
+h1 {
+  color: #002147;
+  margin-bottom: 10px;
+  font-size: 28px;
+  text-align: left;
+}
+
+/* Cabeçalho */
+.header-section {
+  background-color: #002147;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.header-fields {
+  flex: 1 1 75%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header-logo {
+  flex: 1 1 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.header-logo img {
+  width: 100px;
+  height: auto;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Tamanhos dos campos */
+.field-full { flex: 0 0 100%; }
+.field-medium { flex: 0 0 60%; }
+.field-small { flex: 0 0 25%; }
+.field-very-small { flex: 0 0 10%; }
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+thead {
+  background-color: #cccccc;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+th.tempo {
+  width: 80px;
+}
+
+th.detalhamento {
+  width: 400px;
+}
+
+textarea[name="nome_video"],
+textarea[name="detalhamento_inicio"],
+textarea[name="detalhamento_fim"],
+textarea[name="orientacao"] {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Botões */
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: opacity 0.3s;
+}
+
+#btn-adicionar { background-color: #002147; }
+#btn-exportar {
+  background-color: #4CAF50; /* Verde forte */
+}
+#btn-limpar { background-color: #FF3B30; }
+
+.buttons button:hover {
+  opacity: 0.8;
+}
+.orientacao-automatica {
+  background-color: #fff8b3; /* amarelo clarinho */
+  font-style: italic;
+  color: #333;
+  text-align: center; /* centraliza o texto horizontalmente */
+  vertical-align: middle; /* não funciona no textarea, então vamos fazer outro truque */
+  padding-top: 10px; /* truque para "subir" o texto e ficar mais centralizado */
+}
+
+/* Footer */
+footer {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+

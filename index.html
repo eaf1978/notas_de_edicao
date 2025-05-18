@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Notas de Edição</title>
+  <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+
+  <!-- Título -->
+  <h1>Formulário de Notas de Edição</h1>
+
+  <form id="formulario">
+
+  <!-- ÁREA A SER EXPORTADA -->
+  <div id="area-exportar">
+
+    <!-- Cabeçalho azul marinho -->
+    <div class="header-section">
+      <div class="header-fields">
+        <div class="field-very-small">
+          <label for="escola">Escola (Setor)</label>
+          <select id="escola" name="escola" required>
+            <option value="">Selecione...</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Mobile">Mobile</option>
+            <option value="IA">IA</option>
+            <option value="Programação">Programação</option>
+          </select>
+        </div>
+        <div class="field-very-small">
+          <label for="id_curso">ID do Curso</label>
+          <input type="number" id="id_curso" name="id_curso" min="1000" max="9999" required>
+        </div>
+        <div class="field-small">
+          <label for="nome_curso">Nome do Curso</label>
+          <input type="text" id="nome_curso" name="nome_curso" required>
+        </div>
+        <div class="field-small">
+          <label for="instrutores">Nome do(a) Instrutor(a)</label>
+          <input type="text" id="instrutores" name="instrutores" required>
+        </div>
+        <div class="field-small">
+          <label for="preenchido_por">Preenchido por</label>
+          <input type="text" id="preenchido_por" name="preenchido_por" required>
+        </div>
+      </div>
+
+      <div class="header-logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+    </div>
+
+    <!-- TABELA -->
+    <table id="tabela">
+      <thead>
+        <tr>
+          <th rowspan="2">Nome do arquivo <br> do vídeo (ou áudio)</th>
+          <th rowspan="2">Recurso</th>
+          <th rowspan="2">Orientação</th>
+          <th colspan="2">Início</th>
+          <th colspan="2">Fim</th>
+        </tr>
+        <tr>
+          <th class="tempo">hh:mm:ss ou mm:ss</th>
+          <th class="detalhamento">Detalhamento</th>
+          <th class="tempo">hh:mm:ss ou mm:ss</th>
+          <th class="detalhamento">Detalhamento</th>
+        </tr>
+      </thead>
+      <tbody id="corpo-tabela">
+        <tr>
+          <td><textarea name="nome_video" rows="2" required></textarea></td>
+          <td>
+            <select name="recurso" onchange="atualizarOrientacao(this)" required>
+              <option value="">Selecione...</option>
+              <option value="Corte">Corte</option>
+              <option value="Inserção">Inserção</option>
+              <option value="Lettering">Lettering</option>
+              <option value="Lista com marcadores">Lista com marcadores</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </td>
+          <td><textarea name="orientacao" class="orientacao-automatica" rows="2" readonly>Preenchimento automático</textarea></td>
+          <td><input type="text" name="inicio" class="tempo" required></td>
+          <td><textarea name="detalhamento_inicio" rows="2"></textarea></td>
+          <td><input type="text" name="fim" class="tempo" required></td>
+          <td><textarea name="detalhamento_fim" rows="2"></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div> <!-- FIM DA AREA EXPORTAR -->
+
+    <!-- Botões -->
+ <div class="buttons">
+<button type="button" id="btn-adicionar">Adicionar nova linha</button>
+  <button type="button" id="btn-exportar" onclick="exportarFormulario()">Exportar formulário</button>
+  <button type="reset" id="btn-limpar">Limpar formulário</button>
+</div>
+
+  </form>
+
+  <footer>
+    ⭐ 2025 Solução desenvolvida por Eunice de Faria.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
